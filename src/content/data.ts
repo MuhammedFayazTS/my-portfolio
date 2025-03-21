@@ -70,4 +70,40 @@ export const skills: {
   },
 ];
 
-export default skills;
+export const experiences = [
+  {
+    name: "Codinoz Technologies LLP",
+    description: "• Developed a restaurant management system # • Worked on a mid-level ERP system to streamline business processes.",
+    image: "/codinoz_technologies_logo.jpeg",
+    startDate: "Apr, 2024",
+    endDate: "current",
+    location: "Malappuram, Kerala",
+  },
+];
+
+export const education = [
+  {
+    name: "Al Ameen College",
+    description: "BSc Computer Science",
+    image: "",
+    startDate: "Jun, 2020",
+    endDate: "Apr, 2024",
+    location: "Aluva, Kerala",
+  },
+  {
+    name: "Paliyam GHSS",
+    description: "Plus Two(Computer Science)",
+    image: "",
+    startDate: "Jun, 2018",
+    endDate: "Mar, 2020",
+    location: "North Paravoor, Kerala",
+  },
+  {
+    name: "St Johns, Aluva",
+    description: "SSLC",
+    image: "",
+    startDate: "Jun, 2017",
+    endDate: "Mar, 2018",
+    location: "Aluva, Kerala",
+  },
+];

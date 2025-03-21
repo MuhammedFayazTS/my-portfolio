@@ -1,7 +1,8 @@
 import { Icon } from "@/assets/icons/icons";
+import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
 import SkillCard from "@/components/skillCard";
-import skills, { profileDescription } from "@/content/data";
+import { skills, profileDescription } from "@/content/data";
 import Image from "next/image";
 
 export default function Home() {
@@ -41,6 +42,8 @@ export default function Home() {
             ))
           }
         </div>
+
+        <ExperienceAndEducationTabs />
 
       </div>
     </main>
