@@ -34,7 +34,7 @@ const Clock:FC<ClockProps> = ({customClass}) => {
     }, [timeZone]);
 
     return (
-        <span className={`text-xs font-semibold cursor-pointer p-2 rounded bg-gray-900 text-gray-300 ${customClass}`}>{currTime}</span>
+        <span className={`text-xs font-semibold cursor-pointer p-2 rounded bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-gray-300 ${customClass}`}>{currTime}</span>
     )
 }
 

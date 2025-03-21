@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
 import Clock from './clock';
 import "leaflet/dist/leaflet.css"
+import { useTheme } from 'next-themes';
 
 // Dynamically import MapBox and Leaflet to avoid SSR issues
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
@@ -14,6 +15,10 @@ const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ss
 const MapBox = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [L, setL] = useState<any>(null);
+    const { theme, systemTheme } = useTheme()
+    console.log({ systemTheme })
+    const isDarkTheme = theme === "dark" || (theme === "system" && systemTheme === "dark")
+    const bgColor = isDarkTheme ? "#171717" : "#f5f5f5";
 
     useEffect(() => {
         import('leaflet').then((leaflet) => {
@@ -34,10 +39,11 @@ const MapBox = () => {
     const myPosition: L.LatLngExpression = myPositionFromENV || [10.127528, 76.312306]
 
     return (
-        <div className="w-full h-[200px] rounded-t-lg overflow-hidden bg-gray-900 relative">
+        <div className="w-full h-[200px] rounded-t-lg overflow-hidden bg-gray-50 dark:bg-gray-900 relative">
             <Clock customClass="absolute top-2 right-2 z-[1000]" />
-            <div className="pointer-events-none absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-gray-950 from-0% to-95% via-transparent to-transparent z-[999]"></div>
+            <div className="pointer-events-none absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-gray-50 dark:from-neutral-950 from-0% to-95% via-transparent to-transparent z-[999]"></div>
             <MapContainer
+                key={isDarkTheme ? "dark" : "light"}
                 center={myPosition}
                 zoom={10}
                 minZoom={6}
@@ -46,11 +52,11 @@ const MapBox = () => {
                 scrollWheelZoom={false}
                 attributionControl={false}
                 zoomControl={false}
-                style={{ width: '100%', height: '100%', backgroundColor: "#171717" }}
+                style={{ width: '100%', height: '100%', backgroundColor: bgColor }}
             >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://jawg.io">JawgIO</a>'
-                    url={`https://tile.jawg.io/jawg-dark/{z}/{x}/{y}.png?access-token=${process.env.NEXT_PUBLIC_JAWG_ACCESS_TOKEN}`}
+                    url={`https://tile.jawg.io/jawg-${isDarkTheme ? 'dark' : 'light'}/{z}/{x}/{y}.png?access-token=${process.env.NEXT_PUBLIC_JAWG_ACCESS_TOKEN}`}
                 />
                 <Marker
                     icon={MyLocation}
