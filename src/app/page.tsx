@@ -1,6 +1,7 @@
 import { Icon } from "@/assets/icons/icons";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
+import Projects from "@/components/projects";
 import SkillCard from "@/components/skillCard";
 import Socials from "@/components/socials";
 import { skills, profileDescription } from "@/content/data";
@@ -14,7 +15,7 @@ export default function Home() {
         <MapBox />
 
         <div className="w-full flex justify-start my-5 px-5">
-          <Image src="/icon.jpg"
+          <Image src="/icon.webp"
             alt="image"
             width={60}
             height={30}
@@ -48,6 +49,8 @@ export default function Home() {
         </div>
 
         <ExperienceAndEducationTabs />
+
+        <Projects />
 
       </div>
     </main>

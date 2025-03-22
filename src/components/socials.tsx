@@ -16,7 +16,7 @@ const Socials = () => {
                     </Link>
                 ))
             }
-            <Link href={"/icon.jpg"}
+            <Link href={"https://drive.google.com/uc?export=download&id=1AFSMcXip8wesWeN9h0VIG5JWQ5AbrmxP"}
                 download
                 target="_blank"
                 className='inline-flex items-center gap-x-1 rounded p-2 text-sm border border-gray-300 dark:border-gray-800 text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-gray-300 dark:hover:text-gray-700 dark:hover:bg-gray-300 transition-colors ease-in-out duration-300'>

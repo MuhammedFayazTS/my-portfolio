@@ -29,7 +29,7 @@ const MapBox = () => {
     if (!L) return null;
 
     const MyLocation = L.icon({
-        iconUrl: '/icon.jpg',
+        iconUrl: '/icon.webp',
         iconSize: [24, 24],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32]

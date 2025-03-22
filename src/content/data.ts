@@ -123,3 +123,29 @@ export const quickSocials: { iconName: iconName; url: string }[] = [
     url: "mailto:muhammedfayazts01@gmail.com",
   },
 ];
+
+export const projectsData: {
+  name: string;
+  duration: string;
+  image: string;
+  stack: iconName[];
+  github: string;
+  live: string;
+}[] = [
+  {
+    name: "Turf Booking Application",
+    duration: "Jan,2024",
+    image: "/turf-booking.webp",
+    stack: ["react", "mongoDB", "node", "express", "tailwind"],
+    github: "/",
+    live: "",
+  },
+  {
+    name: "Chat Application",
+    duration: "Nov,2024",
+    image: "/chat-app.webp",
+    stack: ["react", "mongoDB", "node", "express", "socket", "mui"],
+    github: "/",
+    live: "",
+  },
+];
