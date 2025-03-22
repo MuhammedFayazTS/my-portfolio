@@ -1,4 +1,5 @@
 import { Icon } from "@/assets/icons/icons";
+import ContactForm from "@/components/contact";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
 import Projects from "@/components/projects";
@@ -51,6 +52,8 @@ export default function Home() {
         <ExperienceAndEducationTabs />
 
         <Projects />
+
+        <ContactForm />
 
       </div>
     </main>
