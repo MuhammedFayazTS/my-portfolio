@@ -1,9 +1,8 @@
-'use client'
+'use client';
 
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { toast } from 'sonner'
 
 import {
     Form,
@@ -24,6 +23,15 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Separator } from './ui/separator'
+import { sendEmail } from '@/lib/send-email'
+import { useState } from 'react';
+import { Loader2 } from 'lucide-react';
+
+export type FormData = {
+    name: string;
+    email: string;
+    message: string;
+};
 
 // Schema for contact form validation
 const formSchema = z.object({
@@ -45,17 +53,22 @@ export default function ContactForm() {
             message: '',
         },
     })
+    const [submitting, setSubmitting] = useState(false)
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            // Simulate a successful contact form submission
-            console.log(values)
-            toast.success('Your message has been sent successfully!')
+            setSubmitting(true);
+
+            await sendEmail(values);
+
+            form.reset();
         } catch (error) {
-            console.error('Error submitting contact form', error)
-            toast.error('Failed to send your message. Please try again.')
+            console.error('Error submitting contact form', error);
+        } finally {
+            setSubmitting(false);
         }
     }
+
 
     return (
         <div className="my-3 flex min-h-fit h-full w-full items-center justify-center px-0">
@@ -135,9 +148,14 @@ export default function ContactForm() {
                                     )}
                                 />
 
-                                <Button type="submit" className="bg-blue-800 text-white hover:bg-blue-900 active:bg-blue-700
+                                <Button type="submit" disabled={submitting} className="bg-blue-800 text-white hover:bg-blue-900 active:bg-blue-700
                                  w-full">
-                                    Send Message
+                                    {submitting ? <>
+                                        <Loader2 className="animate-spin" />
+                                        Please wait
+                                    </> :
+                                        <>Send Message</>
+                                    }
                                 </Button>
                             </div>
                         </form>

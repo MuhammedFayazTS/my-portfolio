@@ -16,7 +16,6 @@ const MapBox = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [L, setL] = useState<any>(null);
     const { theme, systemTheme } = useTheme()
-    console.log({ systemTheme })
     const isDarkTheme = theme === "dark" || (theme === "system" && systemTheme === "dark")
     const bgColor = isDarkTheme ? "#171717" : "#f5f5f5";
 
