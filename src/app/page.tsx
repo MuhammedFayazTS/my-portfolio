@@ -2,6 +2,7 @@ import { Icon } from "@/assets/icons/icons";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
 import SkillCard from "@/components/skillCard";
+import Socials from "@/components/socials";
 import { skills, profileDescription } from "@/content/data";
 import Image from "next/image";
 
@@ -15,7 +16,8 @@ export default function Home() {
         <div className="w-full flex justify-start my-5 px-5">
           <Image src="/icon.jpg"
             alt="image"
-            width={60} height={30}
+            width={60}
+            height={30}
             className="rounded-full hover:grayscale transition ease-in-out"
           />
           <div className="flex flex-col ml-3 md:ml-4">
@@ -30,6 +32,8 @@ export default function Home() {
         <span className="w-full ml-0 md:ml-4 text-gray-600 dark:text-gray-300">
           {profileDescription}
         </span>
+
+        <Socials />
 
         <div className="w-full grid grid-cols-4 lg:grid-cols-6 gap-3 my-5">
           {

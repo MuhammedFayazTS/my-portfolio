@@ -73,7 +73,8 @@ export const skills: {
 export const experiences = [
   {
     name: "Codinoz Technologies LLP",
-    description: "• Developed a restaurant management system # • Worked on a mid-level ERP system to streamline business processes.",
+    description:
+      "• Developed a restaurant management system # • Worked on a mid-level ERP system to streamline business processes.",
     image: "/codinoz_technologies_logo.jpeg",
     startDate: "Apr, 2024",
     endDate: "current",
@@ -105,5 +106,20 @@ export const education = [
     startDate: "Jun, 2017",
     endDate: "Mar, 2018",
     location: "Aluva, Kerala",
+  },
+];
+
+export const quickSocials: { iconName: iconName; url: string }[] = [
+  {
+    iconName: "github",
+    url: "https://github.com/MuhammedFayazTS",
+  },
+  {
+    iconName: "linkedin",
+    url: "https://www.linkedin.com/in/muhammed-fayaz-t-s-64a934285?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwCES3hX%2BQeOxXMEj4qGZ5w%3D%3D",
+  },
+  {
+    iconName: "mail",
+    url: "mailto:muhammedfayazts01@gmail.com",
   },
 ];
