@@ -34,8 +34,11 @@ const MapBox = () => {
         popupAnchor: [0, -32]
     });
 
-    const myPositionFromENV = process.env.NEXT_PUBLIC_MY_POSITION ? process.env.NEXT_PUBLIC_MY_POSITION.split(",") as unknown as L.LatLngExpression : null
-    const myPosition: L.LatLngExpression = myPositionFromENV || [10.127528, 76.312306]
+    const myPositionFromENV = process.env.NEXT_PUBLIC_MY_POSITION
+        ? process.env.NEXT_PUBLIC_MY_POSITION.split(",").map(coord => parseFloat(coord.trim())) as L.LatLngExpression
+        : null;
+
+    const myPosition: L.LatLngExpression = myPositionFromENV || [10.127528, 76.312306];
 
     return (
         <div className="w-full h-[200px] rounded-t-lg overflow-hidden bg-gray-50 dark:bg-gray-900 relative">
