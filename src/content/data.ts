@@ -127,6 +127,7 @@ export const quickSocials: { iconName: iconName; url: string }[] = [
 export const projectsData: {
   name: string;
   duration: string;
+  descritpion: string;
   image: string;
   stack: iconName[];
   github: string;
@@ -137,7 +138,9 @@ export const projectsData: {
     duration: "Jan,2024",
     image: "/turf-booking.webp",
     stack: ["react", "mongoDB", "node", "express", "tailwind"],
-    github: "/",
+    descritpion:
+      "The **Turf Booking Application** is a user-friendly platform built with **React**, **MongoDB**, **Node.js**, **Express**, and **Tailwind CSS**, allowing users to easily browse and book turfs for sports activities. Key features include a **turf list**, **nearby turf search**, **booking**, and **cancellation** functionality. The app offers real-time availability, secure user authentication, and responsive design for a seamless experience across devices. Turf owners can manage bookings and turf details through an optional admin panel, making it a comprehensive solution for turf management and booking.",
+    github: "https://github.com/MuhammedFayazTS/Turf-Booking-System.git",
     live: "",
   },
   {
@@ -145,7 +148,9 @@ export const projectsData: {
     duration: "Nov,2024",
     image: "/chat-app.webp",
     stack: ["react", "mongoDB", "node", "express", "socket", "mui"],
-    github: "/",
+    descritpion:
+      "The **Chat Application** is a real-time messaging platform built with **React**, **MongoDB**, **Node.js**, **Express**, **Socket.IO**, and **MUI**. It enables users to engage in **one-on-one** and **group chats**, as well as make **audio** and **video calls**. The app supports **secure authentication**, ensuring only authorized users can access the platform. With a responsive UI powered by **MUI**, the application offers a seamless, real-time communication experience across devices, making it ideal for personal or team collaborations.",
+    github: "https://github.com/MuhammedFayazTS/Chat-Web-App.git",
     live: "",
   },
 ];
@@ -208,3 +213,8 @@ export const blogs = [
     image: "",
   },
 ];
+
+export const contactInfo = {
+  email:"muhammedfayazts01@gmail.com",
+  phone:"+91 7994536503"
+}
