@@ -31,17 +31,17 @@ const Chatbot = () => {
     const toggleOpenBox = () => setOpenBox(prev => !prev)
 
     return (
-        <section className='fixed bottom-5 right-5 w-11/12 md:w-[350px] max-w-md border border-gray-500 bg-neutral-950 rounded'>
+        <section className='fixed bottom-5 right-5 w-11/12 md:w-[350px] max-w-md border border-gray-500 bg-neutral-50 dark:bg-neutral-950 rounded'>
             <div className="w-full flex flex-col justify-start gap-y-1 p-3">
-                <span className='text-sm font-semibold text-gray-300'>Chat with</span>
+                <span className='text-sm font-semibold text-gray-800 dark:text-gray-300'>Chat with</span>
                 <div className="w-full inline-flex items-center gap-x-2">
                     <span className='w-2 h-2 bg-green-500 animate-pulse rounded-full' />
-                    <span className='text-gray-200'>Fayaz's Assistant</span>
+                    <span className='text-gray-800 darK:text-gray-200'>Fayaz's Assistant</span>
                     <Button type='button' variant={"ghost"} className='ml-auto' onClick={toggleOpenBox} >
                         {openBox ?
-                            <ChevronDown className='text-gray-100 w-5 h-5' />
+                            <ChevronDown className='text-gray-900 dark:text-gray-100 w-5 h-5' />
                             :
-                            <ChevronUp className='text-gray-100 w-5 h-5' />}
+                            <ChevronUp className='text-gray-900 dark:text-gray-100 w-5 h-5' />}
                     </Button>
                 </div>
             </div>
@@ -53,7 +53,7 @@ const Chatbot = () => {
                             <div key={index} className='w-full inline-flex items-center gap-x-2'>
                                 {message.sender !== 'user' && <Bot className='w-5 h-5' />}
                                 <div
-                                    className={`w-fit p-2 rounded text-sm ${message.sender === 'user' ? 'bg-gray-50 text-gray-900 ml-auto' : 'border border-gray-600 bg-gray-950'}`}
+                                    className={`w-fit p-2 rounded text-sm ${message.sender === 'user' ? 'bg-gray-900 dark:bg-gray-50 text-gray-200 dark:text-gray-900 ml-auto' : 'border border-gray-600 bg-gray-50 text-gray-900 dark:bg-gray-950 text-gray-200'}`}
                                 >
                                     {message.text}
                                 </div>
