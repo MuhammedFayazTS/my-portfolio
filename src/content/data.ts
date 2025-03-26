@@ -77,7 +77,7 @@ export const experiences = [
       "• Developed a restaurant management system # • Worked on a mid-level ERP system to streamline business processes.",
     image: "/codinoz_technologies_logo.jpeg",
     startDate: "Apr, 2024",
-    endDate: "current",
+    endDate: "present",
     location: "Malappuram, Kerala",
   },
 ];
