@@ -183,4 +183,28 @@ export const blogs = [
     platform: "Medium",
     image: "",
   },
+  {
+    id: 5,
+    title: "File Uploading in React: A Beginner’s Guide",
+    description: "Uploading files in React can seem like a challenging task, but with the right approach, it’s straightforward and powerful. In this blog post, we’ll break down the basics of implementing a file uploader in React.",
+    url: "https://medium.com/@muhammedfayazts01/file-uploading-in-react-a-beginners-guide-762b45748b23",
+    platform: "Medium",
+    image: "",
+  },
+  {
+    id: 6,
+    title: "Building a Progressive Web App (PWA) in React",
+    description: "Progressive Web Apps (PWAs) are web applications that provide a native app-like experience to users. They are reliable, fast, and engaging, offering features like offline access, push notifications, and installation on devices.",
+    url: "https://medium.com/@muhammedfayazts01/building-a-progressive-web-app-pwa-in-react-247a81854760",
+    platform: "Medium",
+    image: "",
+  },
+  {
+    id: 7,
+    title: "Exploring tRPC and Comparing It with REST API",
+    description: "tRPC (TypeScript Remote Procedure Call) is a library that allows you to build type-safe APIs using TypeScript.",
+    url: "https://medium.com/@muhammedfayazts01/exploring-trpc-and-comparing-it-with-rest-api-0090d48a9697",
+    platform: "Medium",
+    image: "",
+  },
 ];

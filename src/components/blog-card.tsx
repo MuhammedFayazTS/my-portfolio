@@ -12,7 +12,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ title, description, url, platform, image }) => {
     return (
-        <div className="bg-gray-100 dark:bg-gray-900 border rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+        <div className="bg-gray-100 dark:bg-neutral-900 border rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
             {image && (
                 <div className="relative w-full h-48">
                     <Image
@@ -31,7 +31,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, description, url, platform, 
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 mt-4 inline-block text-sm font-semibold"
+                    className="text-blue-400 mt-4 inline-block text-sm font-semibold"
                 >
                     Read more
                 </Link>

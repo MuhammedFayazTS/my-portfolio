@@ -54,7 +54,7 @@ export default function Home() {
 
         <Projects />
 
-        <BlogCardList blogs={blogs} limit={4} />
+        <BlogCardList blogs={blogs} limit={4} isLatestBlogs />
 
         <ContactForm />
 

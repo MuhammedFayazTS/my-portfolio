@@ -10,7 +10,7 @@ const Header = () => {
                 <ul className="flex items-center gap-x-2 text-sm font-semibold">
                     <Link href={'/blogs'} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 cursor-pointer">Blog</Link>
                     <Link href={'/projects'} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 cursor-pointer">Projects</Link>
-                    <Link href={'/contact'} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 cursor-pointer">Contact</Link>
+                    <Link href={'/#contact'} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 cursor-pointer">Contact</Link>
                 </ul>
                 <div className="flex gap-x-2 items-center">
                     {/* <Bot className="w-5 h-5 text-gray-300" /> */}
