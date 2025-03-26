@@ -1,11 +1,12 @@
 import { Icon } from "@/assets/icons/icons";
+import BlogCardList from "@/components/blog-card-list";
 import ContactForm from "@/components/contact";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
 import Projects from "@/components/projects";
 import SkillCard from "@/components/skillCard";
 import Socials from "@/components/socials";
-import { skills, profileDescription } from "@/content/data";
+import { skills, profileDescription, blogs } from "@/content/data";
 import Image from "next/image";
 
 export default function Home() {
@@ -52,6 +53,8 @@ export default function Home() {
         <ExperienceAndEducationTabs />
 
         <Projects />
+
+        <BlogCardList blogs={blogs} limit={4} />
 
         <ContactForm />
 

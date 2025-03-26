@@ -72,7 +72,7 @@ export default function ContactForm() {
 
     return (
         <div className="my-3 flex min-h-fit h-full w-full items-center justify-center px-0">
-            <Card className="mx-auto w-full bg-gray-50 dark:bg-neutral-950 border-none">
+            <Card className="mx-auto w-full bg-gray-50 dark:bg-neutral-950 shadow-none border-none">
                 <CardHeader>
                     <CardTitle className="text-2xl inline-flex gap-x-3">
                         Contact Me

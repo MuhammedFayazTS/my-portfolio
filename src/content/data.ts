@@ -149,3 +149,38 @@ export const projectsData: {
     live: "",
   },
 ];
+
+export const blogs = [
+  {
+    id: 1,
+    title: "Workers in React",
+    description: "Web Workers vs. Service Workers in React: A Complete Guide with Use Cases",
+    url: "https://dev.to/muhammed_fayazts_e35676/web-workers-vs-service-workers-in-react-a-complete-guide-with-use-cases-2po7",
+    platform: "Dev.to",
+    image: "",
+  },
+  {
+    id: 2,
+    title: "SSR, SSG, and ISR in Next.js",
+    description: "What, Why, and When to Use - SSR, SSG, and ISR in Next.js",
+    url: "https://dev.to/muhammed_fayazts_e35676/ssr-ssg-and-isr-in-nextjs-what-why-and-when-to-use-529d",
+    platform: "Dev.to",
+    image: "",
+  },
+  {
+    id: 3,
+    title: "7 Useful Custom Hooks in React",
+    description: " 7 beginner-friendly custom hooks that can significantly enhance your React development experience. Let’s dive in!",
+    url: "https://dev.to/muhammed_fayazts_e35676/7-useful-custom-hooks-every-react-beginner-should-know-566m",
+    platform: "Dev.to",
+    image: "",
+  },
+  {
+    id: 4,
+    title: "Introduction to TanStack Query with React and TypeScript",
+    description: "TanStack Query is a tool for managing server-state in React apps, simplifying data fetching, caching, and updates, improving efficiency and code readability.",
+    url: "https://medium.com/@muhammedfayazts01/introduction-to-tanstack-query-with-react-and-typescript-0448586ccfb2",
+    platform: "Medium",
+    image: "",
+  },
+];
