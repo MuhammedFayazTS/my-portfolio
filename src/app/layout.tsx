@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
+import { ChatBotProvider } from "@/hooks/useChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +38,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
-          <Toaster />
+          <ChatBotProvider>
+            <Header />
+            {children}
+            <Footer />
+            <Toaster />
+          </ChatBotProvider>
         </ThemeProvider >
       </body>
     </html>

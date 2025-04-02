@@ -7,6 +7,7 @@ import { ScrollArea } from './ui/scroll-area';
 import { Input } from './ui/input';
 import debounce from "lodash/debounce";
 import ReactMarkdown from "react-markdown";
+import { useChatBot } from '@/hooks/useChatBot';
 
 type Message = {
     role: "assistant" | "user";
@@ -50,8 +51,9 @@ const QUICK_OPTIONS: QuickOption[] = [
 ];
 
 const Chatbot = () => {
+    const { isBotActive } = useChatBot();
     const [openBox, setOpenBox] = useState(false)
-
+    
     const [remainingMessages, setRemainingMessages] = useState(() => {
         if (typeof window !== "undefined") {
             const stored = localStorage.getItem(RATE_LIMIT_KEY);
@@ -70,7 +72,7 @@ const Chatbot = () => {
         {
             role: "assistant",
             content:
-                "Hi! I'm Fayaz's AI assistant. I can help you learn more about his skills, experience, or how he can help with your project. What would you like to know?",
+            "Hi! I'm Fayaz's AI assistant. I can help you learn more about his skills, experience, or how he can help with your project. What would you like to know?",
             timestamp: new Date(),
         },
     ]);
@@ -80,7 +82,7 @@ const Chatbot = () => {
     const [confirmClear, setConfirmClear] = useState<ConfirmClearState>({
         show: false,
     });
-
+    
     useEffect(() => {
         if (remainingMessages < MAX_MESSAGES_PER_HOUR) {
             localStorage.setItem(
@@ -92,7 +94,7 @@ const Chatbot = () => {
             );
         }
     }, [remainingMessages]);
-
+    
     const debouncedApiCall = useCallback((chatMessages: ChatMessage[]) => {
         const apiCall = async () => {
             try {
@@ -115,7 +117,7 @@ const Chatbot = () => {
                 const data = await response.json();
 
                 const content = data.content.replace(/<[^>]*>/g, "");
-
+                
                 setMessages((prev) => [
                     ...prev,
                     {
@@ -131,7 +133,7 @@ const Chatbot = () => {
                     {
                         role: "assistant" as const,
                         content:
-                            "I apologize, but I'm having trouble connecting right now. Please try again or use the contact form.",
+                        "I apologize, but I'm having trouble connecting right now. Please try again or use the contact form.",
                         timestamp: new Date(),
                     },
                 ]);
@@ -234,7 +236,7 @@ const Chatbot = () => {
 
     const toggleOpenBox = () => setOpenBox(prev => !prev)
 
-    return (
+    return !isBotActive ? null:(
         <section className='fixed bottom-5 right-5 w-11/12 md:w-[350px] max-w-md border border-gray-500 bg-neutral-50 dark:bg-neutral-950 rounded'>
             <div className="w-full flex flex-col justify-start gap-y-1 p-3">
                 <span className='text-sm font-semibold text-gray-800 dark:text-gray-300'>Chat with</span>
