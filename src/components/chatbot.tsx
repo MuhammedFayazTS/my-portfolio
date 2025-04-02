@@ -24,9 +24,30 @@ type ConfirmClearState = {
     timeoutId?: NodeJS.Timeout;
 };
 
+type QuickOption = {
+    text: string;
+    message: string;
+};
+
 const RATE_LIMIT_KEY = "chatRateLimit";
 const MAX_MESSAGES_PER_HOUR = 20;
 const MESSAGE_HISTORY_LIMIT = 5;
+
+const QUICK_OPTIONS: QuickOption[] = [
+    {
+        text: "👩‍💻 Skills & Experience",
+        message: "Can you tell me about Fayaz's main skills and experience?",
+    },
+    {
+        text: "🚀 Project Collaboration",
+        message:
+            "I'm interested in working with Fayaz. What's the best way to start?",
+    },
+    {
+        text: "💼 Past Projects",
+        message: "Could you share some examples of Fayaz's past projects?",
+    },
+];
 
 const Chatbot = () => {
     const [openBox, setOpenBox] = useState(false)
@@ -121,6 +142,13 @@ const Chatbot = () => {
         return debounce(apiCall, 750)();
     }, []);
 
+    const handleQuickOptionClick = (option: QuickOption) => {
+        if (isTyping || remainingMessages <= 0) return;
+        setInput(option.message);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        handleSubmit(new Event("submit") as any);
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!input.trim()) return;
@@ -179,7 +207,7 @@ const Chatbot = () => {
                 {
                     role: "assistant",
                     content:
-                        "Hi! I'm Aga's AI assistant. I can help you learn more about his skills, experience, or how she can help with your project. What would you like to know?",
+                        "Hi! I'm Fayaz's AI assistant. I can help you learn more about his skills, experience, or how she can help with your project. What would you like to know?",
                     timestamp: new Date(),
                 },
             ]);
@@ -265,6 +293,23 @@ const Chatbot = () => {
                                     >
                                         {message.content}
                                     </ReactMarkdown>
+
+                                    {index === 0 && messages.length === 1 && (
+                                        <div
+                                            className="mt-4 flex flex-col gap-2"
+                                        >
+                                            {QUICK_OPTIONS.map((option) => (
+                                                <button
+                                                    key={option.text}
+                                                    onClick={() => handleQuickOptionClick(option)}
+                                                    className="text-left px-3 py-2 rounded-md hover:bg-gray-800 transition-colors text-sm"
+                                                    disabled={isTyping || remainingMessages <= 0}
+                                                >
+                                                    {option.text}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}
