@@ -1,5 +1,6 @@
 import { Icon } from "@/assets/icons/icons";
 import BlogCardList from "@/components/blog-card-list";
+import Chatbot from "@/components/chatbot";
 import ContactForm from "@/components/contact";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
@@ -57,6 +58,8 @@ export default function Home() {
         <BlogCardList blogs={blogs} limit={4} isLatestBlogs />
 
         <ContactForm />
+
+        <Chatbot />
 
       </div>
     </main>
