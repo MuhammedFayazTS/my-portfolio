@@ -149,3 +149,62 @@ export const projectsData: {
     live: "",
   },
 ];
+
+export const blogs = [
+  {
+    id: 1,
+    title: "Workers in React",
+    description: "Web Workers vs. Service Workers in React: A Complete Guide with Use Cases",
+    url: "https://dev.to/muhammed_fayazts_e35676/web-workers-vs-service-workers-in-react-a-complete-guide-with-use-cases-2po7",
+    platform: "Dev.to",
+    image: "",
+  },
+  {
+    id: 2,
+    title: "SSR, SSG, and ISR in Next.js",
+    description: "What, Why, and When to Use - SSR, SSG, and ISR in Next.js",
+    url: "https://dev.to/muhammed_fayazts_e35676/ssr-ssg-and-isr-in-nextjs-what-why-and-when-to-use-529d",
+    platform: "Dev.to",
+    image: "",
+  },
+  {
+    id: 3,
+    title: "7 Useful Custom Hooks in React",
+    description: " 7 beginner-friendly custom hooks that can significantly enhance your React development experience. Let’s dive in!",
+    url: "https://dev.to/muhammed_fayazts_e35676/7-useful-custom-hooks-every-react-beginner-should-know-566m",
+    platform: "Dev.to",
+    image: "",
+  },
+  {
+    id: 4,
+    title: "Introduction to TanStack Query with React and TypeScript",
+    description: "TanStack Query is a tool for managing server-state in React apps, simplifying data fetching, caching, and updates, improving efficiency and code readability.",
+    url: "https://medium.com/@muhammedfayazts01/introduction-to-tanstack-query-with-react-and-typescript-0448586ccfb2",
+    platform: "Medium",
+    image: "",
+  },
+  {
+    id: 5,
+    title: "File Uploading in React: A Beginner’s Guide",
+    description: "Uploading files in React can seem like a challenging task, but with the right approach, it’s straightforward and powerful. In this blog post, we’ll break down the basics of implementing a file uploader in React.",
+    url: "https://medium.com/@muhammedfayazts01/file-uploading-in-react-a-beginners-guide-762b45748b23",
+    platform: "Medium",
+    image: "",
+  },
+  {
+    id: 6,
+    title: "Building a Progressive Web App (PWA) in React",
+    description: "Progressive Web Apps (PWAs) are web applications that provide a native app-like experience to users. They are reliable, fast, and engaging, offering features like offline access, push notifications, and installation on devices.",
+    url: "https://medium.com/@muhammedfayazts01/building-a-progressive-web-app-pwa-in-react-247a81854760",
+    platform: "Medium",
+    image: "",
+  },
+  {
+    id: 7,
+    title: "Exploring tRPC and Comparing It with REST API",
+    description: "tRPC (TypeScript Remote Procedure Call) is a library that allows you to build type-safe APIs using TypeScript.",
+    url: "https://medium.com/@muhammedfayazts01/exploring-trpc-and-comparing-it-with-rest-api-0090d48a9697",
+    platform: "Medium",
+    image: "",
+  },
+];
