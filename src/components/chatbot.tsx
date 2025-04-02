@@ -237,7 +237,7 @@ const Chatbot = () => {
     const toggleOpenBox = () => setOpenBox(prev => !prev)
 
     return !isBotActive ? null:(
-        <section className='fixed bottom-5 right-5 w-11/12 md:w-[350px] max-w-md border border-gray-500 bg-neutral-50 dark:bg-neutral-950 rounded'>
+        <section className='fixed bottom-5 right-5 w-11/12 md:w-[350px] max-w-md border border-gray-500 bg-neutral-50 dark:bg-neutral-950 rounded z-[1005]'>
             <div className="w-full flex flex-col justify-start gap-y-1 p-3">
                 <span className='text-sm font-semibold text-gray-800 dark:text-gray-300'>Chat with</span>
                 <div className="w-full inline-flex items-center gap-x-2">
