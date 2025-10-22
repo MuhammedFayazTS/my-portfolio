@@ -4,11 +4,11 @@ import Chatbot from "@/components/chatbot";
 import ContactForm from "@/components/contact";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
 import MapBox from "@/components/mapBox";
+import Profile from "@/components/profile";
 import Projects from "@/components/projects";
 import SkillCard from "@/components/skillCard";
 import Socials from "@/components/socials";
-import { skills, profileDescription, blogs } from "@/content/data";
-import Image from "next/image";
+import { skills, blogs } from "@/content/data";
 
 export default function Home() {
   return (
@@ -17,25 +17,7 @@ export default function Home() {
 
         <MapBox />
 
-        <div className="w-full flex justify-start my-5 px-5">
-          <Image src="/icon.webp"
-            alt="image"
-            width={60}
-            height={30}
-            className="rounded-full hover:grayscale transition ease-in-out"
-          />
-          <div className="flex flex-col ml-3 md:ml-4">
-            <h2 className="text-xl font-bold text-gray-700 dark:text-gray-100">Muhammed Fayaz TS</h2>
-            <div className="flex gap-x-1 items-center">
-              <div className="animate-pulse w-2 h-2 rounded-full bg-green-600 dark:bg-green-500"></div>
-              <span className="text-sm text-neutral-400 dark:text-neutral-500">Available For Work</span>
-            </div>
-          </div>
-        </div>
-
-        <span className="w-full ml-0 md:ml-4 text-gray-600 dark:text-gray-300">
-          {profileDescription}
-        </span>
+        <Profile/>
 
         <Socials />
 

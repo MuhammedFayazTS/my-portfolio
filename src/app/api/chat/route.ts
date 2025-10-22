@@ -12,7 +12,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 // Create a context string from your data
 const createContextFromData = () => {
   const projects = projectsData
-    .map((p) => `- ${p.name}: ${p.descritpion}`)
+    .map((p) => `- ${p.name}: ${p.description}`)
     .join("\n");
 
   const skill = skills.map((s) => s.name).join(", ");

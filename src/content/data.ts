@@ -8,67 +8,67 @@ export const skills: {
   iconName: iconName;
   hover: string;
 }[] = [
-  {
-    name: "HTML",
-    iconName: "html",
-    hover: "text-orange-500",
-  },
-  {
-    name: "CSS",
-    iconName: "css",
-    hover: "text-blue-500",
-  },
-  {
-    name: "React",
-    iconName: "react",
-    hover: "text-blue-500",
-  },
-  {
-    name: "Next",
-    iconName: "next",
-    hover: "text-gray-950",
-  },
-  {
-    name: "Node JS",
-    iconName: "node",
-    hover: "text-green-500",
-  },
-  {
-    name: "Express",
-    iconName: "express",
-    hover: "text-gray-950",
-  },
-  {
-    name: "TypeScript",
-    iconName: "typescript",
-    hover: "text-blue-500",
-  },
-  {
-    name: "PostgreSQL",
-    iconName: "postgresql",
-    hover: "text-blue-500",
-  },
-  {
-    name: "MongoDB",
-    iconName: "mongoDB",
-    hover: "text-green-500",
-  },
-  {
-    name: "Tailwind",
-    iconName: "tailwind",
-    hover: "text-blue-500",
-  },
-  {
-    name: "Sequelize",
-    iconName: "sequelize",
-    hover: "text-blue-500",
-  },
-  {
-    name: "Docker",
-    iconName: "docker",
-    hover: "text-blue-500",
-  },
-];
+    {
+      name: "HTML",
+      iconName: "html",
+      hover: "text-orange-500",
+    },
+    {
+      name: "CSS",
+      iconName: "css",
+      hover: "text-blue-500",
+    },
+    {
+      name: "React",
+      iconName: "react",
+      hover: "text-blue-500",
+    },
+    {
+      name: "Next",
+      iconName: "next",
+      hover: "text-gray-950",
+    },
+    {
+      name: "Node JS",
+      iconName: "node",
+      hover: "text-green-500",
+    },
+    {
+      name: "Express",
+      iconName: "express",
+      hover: "text-gray-950",
+    },
+    {
+      name: "TypeScript",
+      iconName: "typescript",
+      hover: "text-blue-500",
+    },
+    {
+      name: "PostgreSQL",
+      iconName: "postgresql",
+      hover: "text-blue-500",
+    },
+    {
+      name: "MongoDB",
+      iconName: "mongoDB",
+      hover: "text-green-500",
+    },
+    {
+      name: "Tailwind",
+      iconName: "tailwind",
+      hover: "text-blue-500",
+    },
+    {
+      name: "Sequelize",
+      iconName: "sequelize",
+      hover: "text-blue-500",
+    },
+    {
+      name: "Docker",
+      iconName: "docker",
+      hover: "text-blue-500",
+    },
+  ];
 
 export const experiences = [
   {
@@ -127,33 +127,63 @@ export const quickSocials: { iconName: iconName; url: string }[] = [
 export const projectsData: {
   name: string;
   duration: string;
-  descritpion: string;
+  description: string;
   image: string;
   stack: iconName[];
   github: string;
   live: string;
 }[] = [
-  {
-    name: "Turf Booking Application",
-    duration: "Jan,2024",
-    image: "/turf-booking.webp",
-    stack: ["react", "mongoDB", "node", "express", "tailwind"],
-    descritpion:
-      "The **Turf Booking Application** is a user-friendly platform built with **React**, **MongoDB**, **Node.js**, **Express**, and **Tailwind CSS**, allowing users to easily browse and book turfs for sports activities. Key features include a **turf list**, **nearby turf search**, **booking**, and **cancellation** functionality. The app offers real-time availability, secure user authentication, and responsive design for a seamless experience across devices. Turf owners can manage bookings and turf details through an optional admin panel, making it a comprehensive solution for turf management and booking.",
-    github: "https://github.com/MuhammedFayazTS/Turf-Booking-System.git",
-    live: "",
-  },
-  {
-    name: "Chat Application",
-    duration: "Nov,2024",
-    image: "/chat-app.webp",
-    stack: ["react", "mongoDB", "node", "express", "socket", "mui"],
-    descritpion:
-      "The **Chat Application** is a real-time messaging platform built with **React**, **MongoDB**, **Node.js**, **Express**, **Socket.IO**, and **MUI**. It enables users to engage in **one-on-one** and **group chats**, as well as make **audio** and **video calls**. The app supports **secure authentication**, ensuring only authorized users can access the platform. With a responsive UI powered by **MUI**, the application offers a seamless, real-time communication experience across devices, making it ideal for personal or team collaborations.",
-    github: "https://github.com/MuhammedFayazTS/Chat-Web-App.git",
-    live: "",
-  },
-];
+    {
+      name: "Aaravam - Kerala Festival Map",
+      duration: "Oct,2025 - ongoing",
+      image: "./kathakali.svg",
+      stack: ["react", "tailwind", "typescript"],
+      description:
+        "Interactive map showing local festivals across Kerala. Built with React, TypeScript, and Mapbox — includes district, name, and date-based filtering.",
+      github: "https://github.com/MuhammedFayazTS/kerala-festival-map-frontend.git",
+      live: "",
+    },
+    {
+      name: "Kerala Vegetable & Fruits Price Dashboard",
+      duration: "Sept, 2025",
+      image: "/veg-fruits.png",
+      stack: ["tailwind", "next", "typescript"],
+      description:
+        "Provides daily market prices and historical trends for vegetables and fruits in Kerala.",
+      github: "https://github.com/MuhammedFayazTS/kerala-market-prices-ui.git",
+      live: "https://kerala-market-prices.vercel.app/",
+    },
+    {
+      name: "User Management System",
+      duration: "Jun,2025",
+      image: "/user-management.png",
+      stack: ["react", "postgresql", "node", "express", "tailwind"],
+      description:
+        "The **User Management System** is a comprehensive platform built with **React**, **PostgreSQL**, **Node.js**, **Express**, and **Tailwind CSS**. It allows administrators to manage user accounts, roles, and permissions effectively. Key features include user JWT-based authentication, refresh tokens, and additional security measures like two-factor authentication (2FA). The system ensures secure user authentication and provides a responsive design for seamless usage across devices.",
+      github: "https://github.com/MuhammedFayazTS/User-Management-Frontend.git",
+      live: "",
+    },
+    {
+      name: "Turf Booking Application",
+      duration: "Jan,2024",
+      image: "/turf-booking.png",
+      stack: ["react", "mongoDB", "node", "express", "tailwind"],
+      description:
+        "The **Turf Booking Application** is a user-friendly platform built with **React**, **MongoDB**, **Node.js**, **Express**, and **Tailwind CSS**, allowing users to easily browse and book turfs for sports activities. Key features include a **turf list**, **nearby turf search**, **booking**, and **cancellation** functionality. The app offers real-time availability, secure user authentication, and responsive design for a seamless experience across devices. Turf owners can manage bookings and turf details through an optional admin panel, making it a comprehensive solution for turf management and booking.",
+      github: "https://github.com/MuhammedFayazTS/Turf-Booking-System.git",
+      live: "",
+    },
+    {
+      name: "Chat Application",
+      duration: "Nov,2024",
+      image: "/chat-app.png",
+      stack: ["react", "mongoDB", "node", "express", "socket", "mui"],
+      description:
+        "The **Chat Application** is a real-time messaging platform built with **React**, **MongoDB**, **Node.js**, **Express**, **Socket.IO**, and **MUI**. It enables users to engage in **one-on-one** and **group chats**, as well as make **audio** and **video calls**. The app supports **secure authentication**, ensuring only authorized users can access the platform. With a responsive UI powered by **MUI**, the application offers a seamless, real-time communication experience across devices, making it ideal for personal or team collaborations.",
+      github: "https://github.com/MuhammedFayazTS/Chat-Web-App.git",
+      live: "",
+    },
+  ];
 
 export const blogs = [
   {
@@ -215,6 +245,6 @@ export const blogs = [
 ];
 
 export const contactInfo = {
-  email:"muhammedfayazts01@gmail.com",
-  phone:"+91 7994536503"
+  email: "muhammedfayazts01@gmail.com",
+  phone: "+91 7994536503"
 }
