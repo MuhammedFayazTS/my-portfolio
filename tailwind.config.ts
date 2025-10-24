@@ -55,7 +55,10 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		animation: {
+        "fade-in-out": "fade-in-out 2.5s ease-in-out",
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,10 +1,14 @@
 'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
 import Clock from '../clock';
 import "leaflet/dist/leaflet.css"
 import { useTheme } from 'next-themes';
+import { WeatherData } from '@/lib/api';
+import WeatherInfo from './weather-info';
+import AutoCenter from './auto-center';
+const WeatherLayer = React.lazy(() => import('./weather-layer'));
 
 // Dynamically import MapBox and Leaflet to avoid SSR issues
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
@@ -12,7 +16,12 @@ const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLaye
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
-const MapBox = () => {
+interface IMapBoxProps {
+    myPosition: L.LatLngTuple;
+    weather: WeatherData;
+}
+
+const MapBox = ({ myPosition, weather }: IMapBoxProps) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [L, setL] = useState<any>(null);
     const { theme, systemTheme } = useTheme()
@@ -34,15 +43,15 @@ const MapBox = () => {
         popupAnchor: [0, -32]
     });
 
-    const myPositionFromENV = process.env.NEXT_PUBLIC_MY_POSITION
-        ? process.env.NEXT_PUBLIC_MY_POSITION.split(",").map(coord => parseFloat(coord.trim())) as L.LatLngExpression
-        : null;
-
-    const myPosition: L.LatLngExpression = myPositionFromENV || [10.127528, 76.312306];
+    const { weatherType } = weather;
 
     return (
         <div className="w-full h-[200px] rounded-t-lg overflow-hidden bg-gray-50 dark:bg-gray-900 relative">
             <Clock customClass="absolute top-2 right-2 z-[1000]" />
+            <Suspense fallback={null}>
+                <WeatherLayer type={weatherType} />
+            </Suspense>
+            <WeatherInfo weather={weather} />
             <div className="pointer-events-none absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-gray-50 dark:from-neutral-950 from-0% to-95% via-transparent to-transparent z-[999]"></div>
             <MapContainer
                 key={isDarkTheme ? "dark" : "light"}
@@ -60,13 +69,12 @@ const MapBox = () => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://jawg.io">JawgIO</a>'
                     url={`https://tile.jawg.io/jawg-${isDarkTheme ? 'dark' : 'light'}/{z}/{x}/{y}.png?access-token=${process.env.NEXT_PUBLIC_JAWG_ACCESS_TOKEN}`}
                 />
+                <AutoCenter center={myPosition} />
                 <Marker
                     icon={MyLocation}
                     position={myPosition}
                 >
-                    <Popup>
-                        Hey Its me 👋
-                    </Popup>
+                    <Popup>Just another commit to the world. 🌍</Popup>
                 </Marker>
             </MapContainer>
         </div>

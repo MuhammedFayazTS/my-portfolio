@@ -84,6 +84,14 @@ export const experiences = [
 
 export const education = [
   {
+    name: "IGNOU",
+    description: "MCA",
+    image: "",
+    startDate: "Jul, 2025",
+    endDate: "ongoing",
+    location: "Distant Learning",
+  },
+  {
     name: "Al Ameen College",
     description: "BSc Computer Science",
     image: "",
