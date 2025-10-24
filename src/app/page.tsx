@@ -1,11 +1,11 @@
 import { Icon } from "@/assets/icons/icons";
-import BlogCardList from "@/components/blog-card-list";
-import Chatbot from "@/components/chatbot";
+import BlogCardList from "@/components/blog/blog-card-list";
+import Chatbot from "@/components/chatbot/chatbot";
 import ContactForm from "@/components/contact";
 import ExperienceAndEducationTabs from "@/components/exp-and-edu-tabs";
-import MapBox from "@/components/mapBox";
-import Profile from "@/components/profile";
-import Projects from "@/components/projects";
+import MapBox from "@/components/map/mapBox";
+import Profile from "@/components/profile/profile";
+import Projects from "@/components/projects/projects";
 import SkillCard from "@/components/skillCard";
 import Socials from "@/components/socials";
 import { skills, blogs } from "@/content/data";

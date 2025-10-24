@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
-import Clock from './clock';
+import Clock from '../clock';
 import "leaflet/dist/leaflet.css"
 import { useTheme } from 'next-themes';
 

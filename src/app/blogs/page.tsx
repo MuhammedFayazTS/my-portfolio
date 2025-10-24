@@ -1,4 +1,4 @@
-import BlogCardList from "@/components/blog-card-list";
+import BlogCardList from "@/components/blog/blog-card-list";
 import { Separator } from "@/components/ui/separator";
 import { blogs } from "@/content/data";
 

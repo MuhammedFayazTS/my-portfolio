@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "./ui/button";
+import { Button } from "./button";
 
 const themes = [
   { name: "light", icon: <Sun />, label: "Light theme" },

@@ -3,7 +3,7 @@
 import React from 'react';
 import { useChatBot } from '@/hooks/useChatBot';
 import { Bot, BotOff } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 const ChatBotToggleButton = () => {
     const { isBotActive, toggleBotActive } = useChatBot();

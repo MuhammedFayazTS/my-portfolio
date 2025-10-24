@@ -1,7 +1,7 @@
 import React from "react";
-import { ModeToggle } from "./mode-toggle";
 import Link from "next/link";
-import ChatBotToggleButton from "./chatbot-toggle";
+import ChatBotToggleButton from "./chatbot/chatbot-toggle";
+import { ModeToggle } from "./ui/mode-toggle";
 
 const Header = () => {
 

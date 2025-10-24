@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { Bot, ChevronDown, ChevronUp, SendHorizonal, Trash } from 'lucide-react';
-import { ScrollArea } from './ui/scroll-area';
-import { Input } from './ui/input';
+import { ScrollArea } from '../ui/scroll-area';
+import { Input } from '../ui/input';
 import debounce from "lodash/debounce";
 import ReactMarkdown from "react-markdown";
 import { useChatBot } from '@/hooks/useChatBot';

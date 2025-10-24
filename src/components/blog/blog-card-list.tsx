@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogCard from './blog-card';
-import { Separator } from './ui/separator';
+import { Separator } from '../ui/separator';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
