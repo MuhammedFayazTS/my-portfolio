@@ -10,7 +10,7 @@ const ChatBotToggleButton = () => {
 
     return (
         <Button variant="ghost" onClick={toggleBotActive}>
-            {isBotActive ? <BotOff className="w-5 h-5 text-gray-300" /> : <Bot className="w-5 h-5 text-gray-300" />}
+            {isBotActive ? <BotOff className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : <Bot className="w-5 h-5 text-gray-600 dark:text-gray-300" />}
         </Button>
     );
 };

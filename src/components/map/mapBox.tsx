@@ -1,8 +1,7 @@
 'use client';
 
 import React, { Suspense, useEffect, useState } from 'react'
-import dynamic from 'next/dynamic';
-import Clock from '../clock';
+import dynamic from 'next/dynamic'
 import "leaflet/dist/leaflet.css"
 import { useTheme } from 'next-themes';
 import { WeatherData } from '@/lib/api';
@@ -15,6 +14,7 @@ const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapCo
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
+const Clock = dynamic(() => import('../clock'));
 
 interface IMapBoxProps {
     myPosition: L.LatLngTuple;

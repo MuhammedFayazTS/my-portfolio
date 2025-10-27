@@ -149,7 +149,7 @@ export const projectsData: {
       description:
         "Interactive map showing local festivals across Kerala. Built with React, TypeScript, and Mapbox — includes district, name, and date-based filtering.",
       github: "https://github.com/MuhammedFayazTS/kerala-festival-map-frontend.git",
-      live: "",
+      live: "https://kerala-festival-map.vercel.app",
     },
     {
       name: "Kerala Vegetable & Fruits Price Dashboard",
@@ -159,7 +159,7 @@ export const projectsData: {
       description:
         "Provides daily market prices and historical trends for vegetables and fruits in Kerala.",
       github: "https://github.com/MuhammedFayazTS/kerala-market-prices-ui.git",
-      live: "https://kerala-market-prices.vercel.app/",
+      live: "https://kerala-market-prices.vercel.app",
     },
     {
       name: "User Management System",

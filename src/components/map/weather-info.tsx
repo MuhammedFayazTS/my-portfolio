@@ -21,11 +21,11 @@ const WeatherInfo: React.FC<WeatherInfoProps> = ({ weather }) => {
         const tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
         tl.fromTo(
             container.current,
-            { y: 20 },
+            { y: 30 },
             { y: 0,  duration: 1, ease: 'power2.out' }
         ).to(
             container.current,
-            { y: 20, duration: 1, delay: 5, ease: 'power2.in' }
+            { y: 30, duration: 1, delay: 5, ease: 'power2.in' }
         );
 
         return () => tl.kill();
