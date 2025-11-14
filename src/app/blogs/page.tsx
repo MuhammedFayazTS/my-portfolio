@@ -2,11 +2,7 @@ import BlogCardList from "@/components/blog/blog-card-list";
 import { Separator } from "@/components/ui/separator";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/lib/sanity-client";
-
-const POSTS_QUERY = `*[
-  _type == "post"
-  && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
+import { POSTS_QUERY } from "../../../sanity/queries/blog";
 
 const options = { next: { revalidate: 30 } };
 

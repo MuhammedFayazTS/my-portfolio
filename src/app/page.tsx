@@ -12,16 +12,8 @@ import { skills } from "@/content/data";
 import { getWeather } from "@/lib/api";
 import { client } from "@/lib/sanity-client";
 import { SanityDocument } from "next-sanity";
+import { LATEST_POSTS_QUERY } from "../../sanity/queries/blog";
 
-const POSTS_QUERY = `*[
-  _type == "post" &&
-  defined(slug.current)
-] | order(publishedAt desc)[0...4]{
-  _id,
-  title,
-  slug,
-  publishedAt
-}`;
 const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
@@ -38,7 +30,7 @@ export default async function Home() {
 
   const weather = await getWeather(myPosition[0], myPosition[1]);
 
-  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+  const posts = await client.fetch<SanityDocument[]>(LATEST_POSTS_QUERY, {}, options);
 
   return (
     <main className="w-full flex flex-col justify-center items-center">

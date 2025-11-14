@@ -1,8 +1,13 @@
 import React from "react";
-import { projectsData } from "@/content/data";
 import ProjectCard from "./project-card";
+import { client } from "@/lib/sanity-client";
+import { projectsQuery } from "../../../sanity/queries/projects";
+import { SanityDocument } from "next-sanity";
 
-const Projects = () => {
+const options = { next: { revalidate: 30 } };
+
+const Projects = async () => {
+    const projectsData = await client.fetch<SanityDocument[]>(projectsQuery, {}, options);
     return (
         <>
             <div className="flex gap-x-2 mb-3">
@@ -13,7 +18,7 @@ const Projects = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-                {projectsData.map(({ name, duration, stack, github, live, image }) => (
+                {projectsData.map(({ name, duration, stack, github, live, imageUrl: image }) => (
                     <ProjectCard
                         key={name}
                         name={name}
