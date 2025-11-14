@@ -1,8 +1,17 @@
 import BlogCardList from "@/components/blog/blog-card-list";
 import { Separator } from "@/components/ui/separator";
-import { blogs } from "@/content/data";
+import { type SanityDocument } from "next-sanity";
+import { client } from "@/lib/sanity-client";
 
-export default function Blogs() {
+const POSTS_QUERY = `*[
+  _type == "post"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
+
+const options = { next: { revalidate: 30 } };
+
+export default async function Blogs() {
+    const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
     return (
         <main className="w-11/12 sm:w-10/12 md:w-7/12 xl:w-5/12 mx-auto">
             <div className='flex gap-x-2'>
@@ -11,7 +20,7 @@ export default function Blogs() {
                 </h2>
                 <Separator className='flex-1 mt-4' />
             </div>
-            <BlogCardList blogs={blogs} />
+            <BlogCardList posts={posts} />
         </main>
     )
 }
