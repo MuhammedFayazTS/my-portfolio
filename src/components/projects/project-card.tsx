@@ -45,7 +45,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
                         {duration}
                     </span>
                     <div className="flex gap-2 mt-1">
-                        {stack.map((tech) => (
+                        {stack?.map((tech) => (
                             <Icon key={tech} iconName={tech} className="w-4 h-4" />
                         ))}
                     </div>

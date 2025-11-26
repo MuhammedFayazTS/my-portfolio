@@ -8,8 +8,13 @@ import Profile from "@/components/profile/profile";
 import Projects from "@/components/projects/projects";
 import SkillCard from "@/components/skillCard";
 import Socials from "@/components/socials";
-import { skills, blogs } from "@/content/data";
+import { skills } from "@/content/data";
 import { getWeather } from "@/lib/api";
+import { client } from "@/lib/sanity-client";
+import { SanityDocument } from "next-sanity";
+import { LATEST_POSTS_QUERY } from "../../sanity/queries/blog";
+
+const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
   const myPositionFromENV = process.env.NEXT_PUBLIC_MY_POSITION
@@ -25,6 +30,8 @@ export default async function Home() {
 
   const weather = await getWeather(myPosition[0], myPosition[1]);
 
+  const posts = await client.fetch<SanityDocument[]>(LATEST_POSTS_QUERY, {}, options);
+
   return (
     <main className="w-full flex flex-col justify-center items-center">
       <div className="w-11/12 sm:w-10/12 md:w-7/12 xl:w-5/12 flex flex-col justify-center">
@@ -32,7 +39,7 @@ export default async function Home() {
         <MapBox
           weather={weather}
           myPosition={myPosition}
-           />
+        />
 
         <Profile />
 
@@ -54,7 +61,7 @@ export default async function Home() {
 
         <Projects />
 
-        <BlogCardList blogs={blogs} limit={4} isLatestBlogs />
+        <BlogCardList posts={posts} isLatestBlogs />
 
         <ContactForm />
 
