@@ -1,9 +1,11 @@
 import { profileDescription } from '@/content/data'
 import React from 'react'
 import ProfileImage from './profile-image'
+import { client } from '@/lib/sanity-client'
+import { PROFILE_QUERY } from '../../../sanity/queries/blog'
 
-const Profile = () => {
-
+const Profile = async () => {
+    const profile = await client.fetch<{ about: string }>(PROFILE_QUERY, {}, { next: { revalidate: 60 * 60 * 24 * 7 } });
     return (
         <>
             <div className="w-full flex justify-start my-5 px-5">
@@ -18,7 +20,7 @@ const Profile = () => {
             </div>
 
             <span className="w-full ml-0 md:ml-4 text-gray-600 dark:text-gray-300">
-                {profileDescription}
+                {profile.about ?? profileDescription}
             </span>
         </>
     )

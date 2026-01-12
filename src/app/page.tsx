@@ -14,7 +14,7 @@ import { client } from "@/lib/sanity-client";
 import { SanityDocument } from "next-sanity";
 import { LATEST_POSTS_QUERY } from "../../sanity/queries/blog";
 
-const options = { next: { revalidate: 30 } };
+const options = { next: { revalidate: 60 * 60 * 24 } };
 
 export default async function Home() {
   const myPositionFromENV = process.env.NEXT_PUBLIC_MY_POSITION
