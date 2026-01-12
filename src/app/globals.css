@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -156,7 +158,7 @@ html {
 }
 
 @media only screen and (max-width: 768px) {
-  .raindrop{
+  .raindrop {
     width: 1px;
     height: 10px;
   }
@@ -230,7 +232,8 @@ html {
   );
   pointer-events: none;
   opacity: 0;
-  animation: glareTransform 10s ease-in-out infinite,
+  animation:
+    glareTransform 10s ease-in-out infinite,
     glareFade 8s ease-in-out infinite;
 }
 
@@ -287,4 +290,30 @@ html {
   95% {
     opacity: 0.4;
   }
+}
+
+/* === Code Block Scrollbar Styling === */
+pre::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+/* Firefox scrollbar */
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #1e1e1e;
 }
