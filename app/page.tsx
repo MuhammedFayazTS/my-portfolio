@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Profile from "@/components/profile/Profile";
 import Skills from "@/components/profile/Skills";
 import Socials from "@/components/profile/Socials";
+import ExperienceAndEducationTabs from "@/components/timeline/ExperienceAndEducationTabs";
 import dynamic from "next/dynamic";
 
 const MapBox = dynamic(
@@ -27,11 +28,12 @@ export default function Home() {
       <Header />
 
       {/* content */}
-      <main className="w-full lg:w-8/12 lg:border lg:rounded-xl">
+      <main className="w-full lg:w-8/12 lg:border lg:rounded-xl pb-10">
         <MapBox myPosition={myPosition} />
         <Profile />
         <Socials />
         <Skills />
+        <ExperienceAndEducationTabs />
       </main>
     </div>
   );
