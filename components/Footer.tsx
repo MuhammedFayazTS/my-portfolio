@@ -26,7 +26,7 @@ const Footer = () => {
               transition-colors
             "
                     >
-                        muhammedfayazts.xyz
+                        muhammedfayazts.in
                     </Link>
                 </span>
 

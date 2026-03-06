@@ -52,7 +52,7 @@ export default function ContactForm() {
     }
 
     return (
-        <section id="contact" className="py-24 px-6 lg:px-20">
+        <section id="contact" className="py-6 px-6 lg:px-20">
 
             {/* Header */}
             <div className="max-w-2xl mb-14">

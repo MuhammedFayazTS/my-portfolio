@@ -5,6 +5,7 @@ import { ModeToggle } from "./ui/mode-toggle";
 // import { ModeToggle } from "./ui/mode-toggle";
 
 const navItems = [
+    { name: "Home", href: "/" },
     { name: "Blog", href: "/blogs" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/#contact" },
