@@ -5,7 +5,7 @@ import Timeline from "./Timeline";
 
 const ExperienceAndEducationTabs = () => {
     return (
-        <Tabs defaultValue="experience" className="w-full mt-10">
+        <Tabs defaultValue="experience" className="w-full my-10 px-5 lg:px-10">
 
             {/* Tab Switcher */}
             <div className="flex justify-center mb-10">

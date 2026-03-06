@@ -1,7 +1,10 @@
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/form/ContactForm";
 import Header from "@/components/Header";
 import Profile from "@/components/profile/Profile";
 import Skills from "@/components/profile/Skills";
 import Socials from "@/components/profile/Socials";
+import Projects from "@/components/projects/Projects";
 import ExperienceAndEducationTabs from "@/components/timeline/ExperienceAndEducationTabs";
 import dynamic from "next/dynamic";
 
@@ -28,12 +31,15 @@ export default function Home() {
       <Header />
 
       {/* content */}
-      <main className="w-full lg:w-8/12 lg:border lg:rounded-xl pb-10">
+      <main className="w-full lg:w-8/12 lg:border lg:rounded-xl">
         <MapBox myPosition={myPosition} />
         <Profile />
         <Socials />
         <Skills />
         <ExperienceAndEducationTabs />
+        <Projects />
+        <ContactForm />
+        <Footer />
       </main>
     </div>
   );
