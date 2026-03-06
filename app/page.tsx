@@ -5,6 +5,7 @@ import Skills from "@/components/profile/Skills";
 import Socials from "@/components/profile/Socials";
 import Projects from "@/components/projects/Projects";
 import ExperienceAndEducationTabs from "@/components/timeline/ExperienceAndEducationTabs";
+import { getWeather } from "@/lib/api";
 import { client } from "@/lib/sanity-client";
 import { LATEST_POSTS_QUERY } from "@/sanity/queries/blog";
 import { SanityDocument } from "next-sanity";
@@ -29,13 +30,14 @@ export default async function Home() {
       ? [myPositionFromENV[0], myPositionFromENV[1]]
       : [10.127528, 76.312306];
 
+  const weather = await getWeather(myPosition[0], myPosition[1]);
   const posts = await client.fetch<SanityDocument[]>(LATEST_POSTS_QUERY, {}, options);
 
   return (
     <div className="min-h-screen w-full flex justify-center py-0 lg:py-3">
       {/* content */}
       <main className="w-full lg:w-8/12 lg:border lg:rounded-xl">
-        <MapBox myPosition={myPosition} />
+        <MapBox myPosition={myPosition} weather={weather} />
         <Profile />
         <Socials />
         <Skills />

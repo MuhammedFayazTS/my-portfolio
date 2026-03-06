@@ -263,3 +263,151 @@
     transform: rotate(360deg);
   }
 }
+
+/* weather display cssk */
+.weather-rain {
+  position: absolute;
+  top: -20px;
+  width: 1px;
+  height: 14px;
+  background: rgba(180, 200, 255, 0.4);
+  animation: rain-fall 1.2s linear infinite;
+}
+
+@keyframes rain-fall {
+  from {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+.weather-cloud {
+  position: absolute;
+  opacity: 0.4;
+  filter: blur(2px) brightness(1.1);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Clouds from LEFT → RIGHT */
+
+.weather-cloud-1 {
+  top: 15%;
+  left: -10%;
+  animation: cloud-drift-right 70s linear infinite;
+}
+
+.weather-cloud-2 {
+  top: 45%;
+  left: -15%;
+  animation: cloud-drift-right 90s linear infinite;
+}
+
+/* Clouds from RIGHT → LEFT */
+
+.weather-cloud-3 {
+  top: 25%;
+  right: -10%;
+  opacity: 0.35;
+  animation: cloud-drift-left 80s linear infinite;
+}
+
+.weather-cloud-4 {
+  top: 60%;
+  right: -5%;
+  opacity: 0.3;
+  animation: cloud-drift-left 110s linear infinite;
+}
+
+/* Animations */
+
+@keyframes cloud-drift-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(320%);
+  }
+}
+
+@keyframes cloud-drift-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-320%);
+  }
+}
+
+.weather-lightning {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  animation: lightning-flash 4s infinite;
+  mix-blend-mode: overlay;
+}
+
+@keyframes lightning-flash {
+  0%,
+  90%,
+  100% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0.5;
+  }
+  94% {
+    opacity: 0.2;
+  }
+}
+
+.weather-sun {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(255, 230, 150, 0.25),
+    transparent 60%
+  );
+  animation: sun-glow 12s ease-in-out infinite;
+}
+
+@keyframes sun-glow {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* === Code Block Scrollbar Styling === */
+pre::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+/* Firefox scrollbar */
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #1e1e1e;
+}

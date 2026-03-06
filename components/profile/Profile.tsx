@@ -1,6 +1,7 @@
 import { PROFILE_QUERY } from '@/sanity/queries/blog';
 import { client } from '@/lib/sanity-client';
 import ProfileImage from './ProfileImage';
+import Clock from '../Clock';
 
 const Profile = async () => {
     const profile = await client.fetch<{ about: string }>(
@@ -10,8 +11,7 @@ const Profile = async () => {
     );
 
     return (
-        <section className="w-full flex flex-col items-center text-center px-6 py-10">
-
+        <section className="w-full flex flex-col items-center text-center px-6 py-6 relative">
             {/* Profile Image */}
             <div className="mb-4">
                 <ProfileImage />
