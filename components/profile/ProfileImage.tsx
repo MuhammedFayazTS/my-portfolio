@@ -3,7 +3,8 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Moon } from "lucide-react";
+import { Bed } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const ProfileImage = () => {
     const [imgSrc, setImgSrc] = useState("/pfp/pfp1.webp");
@@ -20,7 +21,7 @@ const ProfileImage = () => {
             );
 
             const hours = kolkataTime.getHours();
-            setShowSleepIcon(hours >= 23 || hours < 6);
+            setShowSleepIcon(hours >= 23 || hours < 7);
         };
 
         checkSleepTime();
@@ -77,7 +78,7 @@ const ProfileImage = () => {
             </div>
 
             {/* avatar */}
-            <div className="avatar-inner">
+            <div className={cn("avatar-inner", showSleepIcon && "opacity-75")}>
                 <Image
                     ref={imageRef}
                     src={imgSrc}
@@ -97,7 +98,11 @@ const ProfileImage = () => {
                     onTouchStart={shakeIcon}
                     className="sleep-indicator"
                 >
-                    <Moon size={14} />
+                    <Bed size={14} />
+
+                    <span className="sleep-zzz z1">Z</span>
+                    <span className="sleep-zzz z2">z</span>
+                    <span className="sleep-zzz z3">z</span>
                 </div>
             )}
         </div>
