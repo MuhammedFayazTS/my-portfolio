@@ -4,10 +4,12 @@ import Profile from "@/components/profile/Profile";
 import Skills from "@/components/profile/Skills";
 import Socials from "@/components/profile/Socials";
 import Projects from "@/components/projects/Projects";
+import PersonSchema from "@/components/seo/PersonSchema";
 import ExperienceAndEducationTabs from "@/components/timeline/ExperienceAndEducationTabs";
 import { getWeather } from "@/lib/api";
 import { client } from "@/lib/sanity-client";
 import { LATEST_POSTS_QUERY } from "@/sanity/queries/blog";
+import { Metadata } from "next";
 import { SanityDocument } from "next-sanity";
 import dynamic from "next/dynamic";
 
@@ -17,6 +19,12 @@ const MapBox = dynamic(
 );
 
 const options = { next: { revalidate: 60 * 60 * 24 } };
+
+export const metadata: Metadata = {
+  title: "Software Engineer in Kerala",
+  description:
+    "Muhammed Fayaz T S is a Software Engineer based in Kerala building scalable web applications with Next.js, React, Node.js and TypeScript.",
+};
 
 export default async function Home() {
   const myPositionFromENV = process.env.NEXT_PUBLIC_MY_POSITION
@@ -46,6 +54,7 @@ export default async function Home() {
         <BlogCardList posts={posts} isLatestBlogs />
         <ContactForm />
       </main>
+      <PersonSchema />
     </div>
   );
 }
