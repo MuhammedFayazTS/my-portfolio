@@ -3,8 +3,15 @@ import { type SanityDocument } from "next-sanity";
 import { client } from "@/lib/sanity-client";
 import BlogCardList from "@/components/blog/BlogList";
 import { POSTS_QUERY } from "@/sanity/queries/blog";
+import { Metadata } from "next";
 
 const options = { next: { revalidate: 30 } };
+
+export const metadata: Metadata = {
+    title: "Developer Blog",
+    description:
+        "Articles about Next.js, React, TypeScript, web performance and modern web development by Fayaz.",
+};
 
 export default async function Blogs() {
     const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);

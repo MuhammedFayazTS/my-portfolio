@@ -26,7 +26,7 @@ const MapBox = ({ myPosition,
     const [lat, lng] = myPosition;
 
     return (
-        <div className="w-full h-[250px] lg:rounded-t-lg overflow-hidden bg-gray-50 dark:bg-gray-900 relative">
+        <div className="w-full h-[270px] sm:h-[250px] lg:rounded-t-lg overflow-hidden bg-gray-50 dark:bg-gray-900 relative">
 
             <Suspense fallback={null}>
                 <WeatherLayer type={weatherType} />
