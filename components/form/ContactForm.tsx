@@ -19,6 +19,8 @@ import {
 
 import { Loader2, Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { sendEmail } from "@/lib/send-email";
+import Link from "next/link";
+import { socialLinks } from "@/content/data";
 
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
@@ -70,10 +72,13 @@ export default function ContactForm() {
                 {/* Contact Info */}
                 <div className="space-y-7">
 
-                    <div className="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
+                    <Link
+                        href={`mailto:${socialLinks.email}`}
+                        className="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400"
+                    >
                         <Mail className="w-5 h-5" />
-                        your@email.com
-                    </div>
+                        {socialLinks.email}
+                    </Link>
 
                     <div className="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
                         <MapPin className="w-5 h-5" />
@@ -82,7 +87,7 @@ export default function ContactForm() {
 
                     <div className="flex gap-3 pt-2">
                         <a
-                            href="https://github.com"
+                            href={socialLinks.github}
                             target="_blank"
                             className="p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
                         >
@@ -90,7 +95,7 @@ export default function ContactForm() {
                         </a>
 
                         <a
-                            href="https://linkedin.com"
+                            href={socialLinks.linkedin}
                             target="_blank"
                             className="p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
                         >
